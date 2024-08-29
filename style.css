@@ -1,0 +1,134 @@
+/*Police d'écriture*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', 'sans-serif';
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #04202e;
+}
+.link { /*le panier*/
+    margin: 20px;
+    width: fit-content;
+    position: relative;
+    text-decoration: 0;
+    background-color: #37a6ff;
+    color: #fff;
+    padding: 10px 25px; /*padding autour du panier*/
+    border-radius: 6px;
+    font-size: 14px;
+}
+span { /*Le nombre dans le panier*/
+    position: absolute;
+    top: -9px;
+    right: -9px;
+    background-color: red;
+    height: 20px;
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /*centrer au milieu du cadre rouge*/
+    border-radius: 50%;
+    font-size: 12px;
+    color: #fff;
+}
+.products_list{
+    margin: 100px auto; /*déplacer de 100px les éléments*/
+    position: relative;
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(170px,1fr)); /*Mettre les éléments les un a coté des autres et s'auto ajusté*/
+    grid-gap: 20px; /*écart de 20px*/
+}
+.product { /*dérriere chaques propositions de produits*/
+    background-color: #fff;
+    width: 100%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+    overflow: hidden; /*cacher les éléments en dehors du bloc*/
+    transition: 0.5s; /*transition d'apparition du fond*/
+}
+.product:hover {
+    transform: scale(1.1); /*faire grossir lors du passage de la souris*/
+}
+.image_product{  /*image des produits pour les centrés*/
+    height: 200px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.image_product img{ /*les images de chaques propositions*/
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    padding: 20px;
+}
+.content{ /*marge en dessous du texte "ajouter au panier"*/
+    margin-top: 0px;
+    margin-bottom: 30px;
+    height: fit-content; /*utilise l'espace disponible*/
+    text-align: center; /*centrer le texte dans le bloc*/
+}
+.price { /*le prix*/
+    margin: 15px 0;
+    font-weight: 400;
+    color: #37a6ff;
+}
+.id_product{ /*ajouter au panier*/
+    text-align: center;
+    text-decoration: 0;
+    background-color: #37a6ff;
+    letter-spacing: 1px; /*espace entre les lettres*/
+    color: #fff;
+    padding: 10px 10%;
+    border-radius: 6px;
+}
+/*PANIER CSS*/
+.panier{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+.panier img { /*taille des images*/
+    width: 40px;
+    padding: 8px 0;
+}
+.panier section{ /*arrière plan derriere les images*/
+    width: 70%; 
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 6px;
+}
+table{
+    border-collapse: collapse; /*les bordures sont fusionnées du tableau*/
+    width: 100%;
+    letter-spacing: 1px;
+    font-size: 13px;
+}
+th {
+    padding: 10px 0;
+    font-weight: 400;
+}
+td { 
+    border-top: 0.5px solid #999; /*bordure au dessus des selections*/
+    text-align: center;
+    color: #37a6ff;
+}
+tr { 
+    border-bottom: 0.5px solid #999; /*bordure en dessous des selections*/
+}
+
+.total th { /*positionner le total*/
+    border: 0;
+    float: left;
+    font-weight: 500; /*graisse du texte*/
+    color: #37a6ff;
+    padding: 10px;
+}
